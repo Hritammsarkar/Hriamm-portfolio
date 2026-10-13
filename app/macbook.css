@@ -1,0 +1,172 @@
+/* The two faces share a hinge. At -112deg the lid lies on the 68deg deck. */
+.laptop-stage.macbook-stage {
+  width:min(100%,calc(62svh * 1.38),980px);
+  max-width:980px;
+  aspect-ratio:1.38;
+  position:relative;
+  margin:36px auto 20px;
+  perspective:2400px;
+  perspective-origin:50% 100%;
+  transform-style:preserve-3d;
+  flex-shrink:0;
+  --lid-progress:0;
+  --macbook-hinge:67%;
+  --macbook-angle:calc(-112deg + var(--lid-progress) * 112deg);
+}
+.macbook-lid {
+  position:absolute;
+  width:82%;
+  aspect-ratio:1.7;
+  left:9%;
+  bottom:calc(100% - var(--macbook-hinge));
+  transform-origin:50% 100%;
+  transform:rotateX(var(--macbook-angle));
+  transform-style:preserve-3d;
+  z-index:3;
+  will-change:transform;
+}
+.macbook-lid-front,.macbook-lid-back {
+  position:absolute;
+  inset:0;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  border-radius:14px 14px 4px 4px;
+  border:1px solid #d7dbdd;
+}
+.macbook-lid-front {
+  padding:8px 8px 15px;
+  background:linear-gradient(135deg,#22262a,#090c0e 60%,#252b2e);
+  transform:translateZ(1px);
+  box-shadow:0 0 0 1px #515b62;
+  color:#e5eae3;
+  text-align:left;
+}
+.macbook-lid-back {
+  display:grid;
+  place-items:center;
+  transform:rotateX(180deg) translateZ(2px);
+  background:linear-gradient(125deg,#c5cbcf,#f2f3f4 36%,#b9c0c4 78%,#d4d9dc);
+  box-shadow:inset 0 0 0 2px #dce0e3,0 1px 2px #46505780;
+}
+.macbook-lid-back>span {
+  font:500 clamp(12px,2vw,23px) var(--display);
+  color:#717b8280;
+  letter-spacing:-.04em;
+  text-shadow:0 1px 0 #ffffffb3;
+}
+.macbook-display {
+  height:100%;
+  background:#162022;
+  overflow:hidden;
+  border-radius:8px 8px 1px 1px;
+  box-shadow:inset 0 0 0 1px #ffffff0a;
+}
+.macbook-camera {
+  position:absolute;
+  top:8px;
+  left:43%;
+  width:14%;
+  height:11px;
+  border-radius:0 0 6px 6px;
+  background:#0c1012;
+  z-index:2;
+  display:grid;
+  place-items:center;
+}
+.macbook-camera>span {width:3px;height:3px;border-radius:50%;background:#21485e;box-shadow:0 0 0 1px #171f24}
+.macbook-engraving {position:absolute;bottom:3px;left:0;width:100%;text-align:center;font:6px var(--display);color:#8f989b;letter-spacing:.05em}
+.macbook-screen-bar {height:28px;display:flex;align-items:center;justify-content:space-between;gap:5px;padding:0 13px;border-bottom:1px solid #ffffff18;font:6px var(--mono);color:#97aaa5}
+.macbook-screen-bar>span:first-child {font-size:6px;letter-spacing:3px;color:var(--red)}
+.macbook-screen-content {display:flex;height:calc(100% - 28px)}
+.macbook-screen-side {display:flex;flex-direction:column;gap:16px;width:128px;flex-shrink:0;padding:24px 16px;border-right:1px solid #ffffff18;font-size:9px;color:#8fa49b}
+.macbook-screen-side>strong {font:32px var(--display);letter-spacing:-2px;color:#d9e6d5;margin-bottom:8px}
+.macbook-screen-side>small {font:6px var(--mono);color:var(--red);margin-top:auto}
+.macbook-screen-main {flex:1;min-width:0;padding:24px}
+.macbook-screen-label {font:6px var(--mono);letter-spacing:.12em;color:#9eafa1}
+.macbook-screen-main h3 {font-size:clamp(26px,3.2vw,39px);line-height:1.05;letter-spacing:-.04em;margin:15px 0 23px}
+.macbook-pipeline {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.macbook-pipeline>div {padding:10px 8px;border:1px solid #ffffff22;border-radius:4px;display:flex;flex-direction:column}
+.macbook-pipeline small {font:6px var(--mono);color:var(--red);margin-bottom:16px}
+.macbook-pipeline strong {font-size:8px;font-weight:500;line-height:1.3}
+.macbook-pipeline span {font-size:6px;line-height:1.4;color:#a1afa6;margin-top:5px}
+.macbook-screen-bottom {display:flex;justify-content:space-between;gap:8px;margin-top:19px;font:5px var(--mono);color:#97a59c}
+.macbook-deck {
+  position:absolute;
+  top:var(--macbook-hinge);
+  left:9%;
+  width:82%;
+  aspect-ratio:1.7;
+  transform-origin:50% 0;
+  transform:rotateX(68deg);
+  border:1px solid #9ba5ab;
+  border-radius:2px 2px 12px 12px;
+  background:linear-gradient(135deg,#e1e5e7,#aeb7bd 53%,#e4e7e9);
+  box-shadow:inset 0 0 0 1px #ffffff80;
+  z-index:2;
+}
+.macbook-keyboard {position:absolute;top:8%;left:13%;width:74%;height:45%;padding:1.1%;display:flex;flex-direction:column;gap:4%;border-radius:4px;background:#667178;box-shadow:0 0 0 1px #e8ebed80}
+.macbook-key-row {display:flex;gap:1.2%;flex:1}
+.macbook-key-row>span {flex:1;min-width:0;border-radius:2px;background:linear-gradient(#22282d,#12181c);box-shadow:inset 0 1px 0 #ffffff18,0 1px 0 #465158}
+.macbook-key-row-0 {flex:.65}
+.macbook-key-row-4>span:nth-child(4) {flex:6}
+.macbook-speaker {position:absolute;top:11%;width:4%;height:38%;border-radius:4px;background:radial-gradient(#45525b 30%,transparent 35%) 0 0 / 3px 3px;opacity:.6}
+.macbook-speaker-left {left:6%}.macbook-speaker-right {right:6%}
+.macbook-trackpad {position:absolute;top:60%;left:32%;width:36%;height:30%;border:1px solid #8e999f;border-radius:5px;box-shadow:0 1px 0 #ffffff73;background:#ffffff0a}
+.macbook-front-edge {position:absolute;top:90.5%;left:4%;width:92%;height:9px;z-index:4;border:1px solid #a8b1b7;border-top:1px solid #eaf0f3;border-radius:2px 2px 12px 12px;background:linear-gradient(#e1e6e9,#9aa5ac 70%,#737e85);box-shadow:0 5px 8px #25322a20}
+.macbook-front-edge>span {position:absolute;top:-1px;left:43%;width:14%;height:3px;border-radius:0 0 8px 8px;background:#748087}
+.macbook-ground {position:absolute;left:8%;width:84%;height:6%;bottom:0;border-radius:50%;background:#35443c;filter:blur(12px);opacity:.18;transform:scaleX(.96)}
+@media(max-width:800px) {
+  .laptop-stage.macbook-stage {margin:30px auto 18px}
+  .macbook-lid-front,.macbook-lid-back {border-radius:10px 10px 3px 3px}
+  .macbook-lid-front {padding:6px 6px 11px}
+  .macbook-camera {top:6px;height:8px;border-radius:0 0 4px 4px}
+  .macbook-camera>span {width:2px;height:2px}
+  .macbook-display {border-radius:5px 5px 1px 1px}
+  .macbook-engraving {bottom:2px;font-size:5px}
+  .macbook-screen-bar {height:23px;font-size:5px;padding:0 10px}
+  .macbook-screen-content {height:calc(100% - 23px)}
+  .macbook-screen-side {display:none}
+  .macbook-screen-main {padding:19px}
+  .macbook-screen-main h3 {font-size:clamp(20px,4.3vw,32px);margin:12px 0 17px}
+  .macbook-pipeline small {margin-bottom:13px}
+  .macbook-screen-bottom {margin-top:15px}
+  .macbook-front-edge {height:7px}
+}
+@media(max-width:480px) {
+  .macbook-lid-front {padding:4px 4px 8px}
+  .macbook-camera {top:4px;height:6px}
+  .macbook-engraving {font-size:4px;bottom:1px}
+  .macbook-screen-bar {height:16px;padding:0 6px;font-size:4px}
+  .macbook-screen-bar>span:first-child {font-size:4px;letter-spacing:1px}
+  .macbook-screen-content {height:calc(100% - 16px)}
+  .macbook-screen-main {padding:7px 8px}
+  .macbook-screen-label {font-size:4px}
+  .macbook-screen-main h3 {font-size:clamp(14px,4.3vw,20px);margin:6px 0 8px}
+  .macbook-pipeline {gap:3px}
+  .macbook-pipeline>div {padding:5px 3px}
+  .macbook-pipeline small {font-size:4px;margin-bottom:7px}
+  .macbook-pipeline strong {font-size:5px}
+  .macbook-pipeline span {font-size:4px;margin-top:3px}
+  .macbook-screen-bottom {font-size:3px;margin-top:8px}
+  .macbook-front-edge {height:5px}
+  .macbook-front-edge>span {height:2px}
+}
+@media(prefers-reduced-motion:reduce) {
+  .macbook-lid {transform:rotateX(0deg);will-change:auto}
+}
+
+.architecture-section{overflow:clip;padding-bottom:36px}
+.macbook-scroll{position:relative;height:calc(var(--macbook-height,75svh) + clamp(220px,48svh,440px))}
+.macbook-sticky{position:sticky;top:5svh;min-height:calc(100svh - 150px);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.macbook-scroll-hint{margin:0 0 18px;font:10px/1.6 var(--mono);color:#59634f}
+@media(max-width:800px){
+  .architecture-section{padding-bottom:30px}
+  .macbook-scroll{height:calc(var(--macbook-height,50svh) + clamp(200px,35svh,320px))}
+  .macbook-sticky{top:8svh}
+  .macbook-scroll-hint{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){
+  .macbook-scroll{height:auto}
+  .macbook-sticky{position:relative;top:auto;min-height:0}
+  .macbook-scroll-hint{display:none}
+}

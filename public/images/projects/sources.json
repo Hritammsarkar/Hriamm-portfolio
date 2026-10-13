@@ -1,0 +1,38 @@
+{
+  "license": "CC0 1.0 Universal Public Domain Dedication",
+  "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "usageNote": "Representative reference photographs from Wikimedia Commons, not photos of Hritamm Sarkar's actual project builds.",
+  "photos": [
+    {
+      "filename": "fundus.jpg",
+      "title": "Fundus photograph of normal right eye",
+      "author": "Mikael Häggström",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Fundus_photograph_of_normal_right_eye.jpg",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/3/37/Fundus_photograph_of_normal_right_eye.jpg",
+      "width": 1411,
+      "height": 1411,
+      "originalBytes": 253968,
+      "description": "A genuine retinal fundus photograph showing the optic disc and blood vessels."
+    },
+    {
+      "filename": "surveillance-camera.jpg",
+      "title": "Surveillance camera",
+      "author": "Neslihan_Turan",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Surveillance_camera.jpg",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/2/26/Surveillance_camera.jpg",
+      "width": 5184,
+      "height": 3456,
+      "description": "A surveillance camera photographed in Istanbul."
+    },
+    {
+      "filename": "solar-tracker.jpg",
+      "title": "Solar tracker",
+      "author": "Wikideas1",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Solar_tracker.jpg",
+      "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/3/35/Solar_tracker.jpg",
+      "width": 3403,
+      "height": 1298,
+      "description": "A real dual-axis solar tracking installation."
+    }
+  ]
+}

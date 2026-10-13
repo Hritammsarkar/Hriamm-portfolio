@@ -1,0 +1,5 @@
+import {env} from 'cloudflare:workers';import {initialContent,type Content} from './content';import {contentSchema} from './content-schema';
+export function database(){if(!env.DB)throw new Error('Content storage is unavailable');return env.DB}
+export async function readContent(){const row=await database().prepare('SELECT body, revision FROM portfolio WHERE id = ?').bind('main').first<{body:string;revision:number}>();return row?{content:contentSchema.parse(JSON.parse(row.body)) as Content,revision:row.revision}:{content:initialContent,revision:0}}
+export async function saveContent(content:Content,revision:number){const db=database();if(revision===0){const result=await db.prepare('INSERT OR IGNORE INTO portfolio (id, body, revision, updated_at) VALUES (?, ?, 1, ?)').bind('main',JSON.stringify(content),new Date().toISOString()).run();return result.meta.changes===1?1:null}
+const result=await db.prepare('UPDATE portfolio SET body = ?, revision = revision + 1, updated_at = ? WHERE id = ? AND revision = ?').bind(JSON.stringify(content),new Date().toISOString(),'main',revision).run();return result.meta.changes===1?revision+1:null}

@@ -1,0 +1,49 @@
+West Bengal map attribution
+
+Current displayed map: West Bengal Wikivoyage map
+Authors: NordNordWest (original), Sbb1413 (derived work)
+License: Creative Commons Attribution-ShareAlike 3.0 Unported
+Source: https://commons.wikimedia.org/wiki/File:West_Bengal_Wikivoyage_map.png
+License: https://creativecommons.org/licenses/by-sa/3.0/
+The image is displayed without cropping or changes to the map.
+
+Previous illustrated map (no longer displayed):
+
+The map uses simplified geographic boundaries redistributed by geoBoundaries.
+Paths were further simplified and projected for this portfolio's regional map.
+Source release: wmgeolab/geoBoundaries, commit 9469f09.
+
+Indian states:
+DataMeet India community / Election Commission of India.
+Boundary year represented: 2011.
+Creative Commons Attribution 2.5 India (CC BY 2.5 IN).
+https://creativecommons.org/licenses/by/2.5/in/
+https://github.com/datameet/maps
+https://www.geoboundaries.org/api/current/gbOpen/IND/ADM1/
+
+Bangladesh:
+geoBoundaries / Wikimedia Commons.
+Boundary year represented: 2015.
+CC0 1.0 Universal Public Domain Dedication.
+https://creativecommons.org/publicdomain/zero/1.0/
+https://www.geoboundaries.org/api/current/gbOpen/BGD/ADM0/
+
+Nepal:
+geoBoundaries / Open Data Nepal.
+Boundary year represented: 2019.
+Creative Commons Attribution 4.0 International.
+https://creativecommons.org/licenses/by/4.0/
+https://www.geoboundaries.org/api/current/gbOpen/NPL/ADM0/
+
+Bhutan:
+geoBoundaries / Wikimedia Commons, author Babbage.
+Boundary year represented: 2010.
+Creative Commons Attribution 3.0.
+https://creativecommons.org/licenses/by/3.0/
+https://www.geoboundaries.org/api/current/gbOpen/BTN/ADM0/
+
+Geographic data:
+https://github.com/wmgeolab/geoBoundaries/tree/9469f09/releaseData/gbOpen
+
+The location pin identifies the West Bengal region (23.7 N, 87.8 E).
+
