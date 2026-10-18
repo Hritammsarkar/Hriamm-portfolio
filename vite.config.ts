@@ -6,8 +6,10 @@ import { sites } from "./build/sites-vite-plugin";
 import { localStudio } from "./build/local-studio-plugin";
 import { connectorPreview } from "./build/connector-preview-plugin.mjs";
 
+
 const SITE_CREATOR_PLACEHOLDER_DATABASE_ID =
-  "00000000-0000-4000-8000-000000000000";
+  "b8ddfef6-ddd1-473b-82f0-1445018e45a5";
+  
 
 const { d1, r2 } = hostingConfig;
 
